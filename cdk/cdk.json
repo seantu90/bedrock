@@ -51,7 +51,7 @@
     "@aws-cdk/core:includePrefixInUniqueNameGeneration": true,
     "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": true,
     "enableMistral": false,
-    "bedrockRegion": "us-east-1",
+    "bedrockRegion": "us-east-2",
     "allowedIpV4AddressRanges": ["0.0.0.0/1", "128.0.0.0/1"],
     "allowedIpV6AddressRanges": [
       "0000:0000:0000:0000:0000:0000:0000:0000/1",
@@ -59,7 +59,7 @@
     ],
     "identityProviders": [],
     "userPoolDomainPrefix": "",
-    "allowedSignUpEmailDomains": [],
+    "allowedSignUpEmailDomains": ["cht.com.tw"],
     "autoJoinUserGroups": ["CreatingBotAllowed"],
     "selfSignUpEnabled": true,
     "publishedApiAllowedIpV4AddressRanges": ["0.0.0.0/1", "128.0.0.0/1"],
@@ -68,8 +68,19 @@
       "8000:0000:0000:0000:0000:0000:0000:0000/1"
     ],
     "rdbSchedules": {
-      "stop": {},
-      "start": {}
+      "stop": {
+        "minute": "00",
+        "hour": "08",
+        "day": "*",
+        "month": "*",
+        "year": "*"
+      },
+      "start": {
+        "minute": "00",
+        "hour": "04",
+        "day": "*",
+        "month": "*",
+        "year": "*"}
     },
     "embeddingContainerVcpu": 2048,
     "embeddingContainerMemory": 4096
